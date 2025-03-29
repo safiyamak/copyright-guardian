@@ -10,7 +10,7 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-This project was built using lovable AI
+This dashboard was built using lovable AI
 
 ## How to run the project locally?
 
