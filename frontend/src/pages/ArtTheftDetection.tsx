@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import {
   Card,
   CardContent,
@@ -85,6 +85,15 @@ const recentScans = [
 const ArtTheftDetection = () => {
   const [isScanning, setIsScanning] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [searchPrompt, setSearchPrompt] = useState(
+    "Please identify this image and provide relevant information about it"
+  );
+  const [apiKey, setApiKey] = useState("");
+  const [scanResult, setScanResult] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const startScan = () => {
     setIsScanning(true);
@@ -100,6 +109,32 @@ const ArtTheftDetection = () => {
         return prev + 5;
       });
     }, 300);
+  };
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setSelectedFile(event.target.files[0]);
+      // Reset previous results when a new file is selected
+      setScanResult(null);
+      setError(null);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
+      setSelectedFile(e.dataTransfer.files[0]);
+      // Reset previous results when a new file is selected
+      setScanResult(null);
+      setError(null);
+    }
+  };
+
+  const triggerFileInput = () => {
+    fileInputRef.current?.click();
   };
 
   return (
@@ -137,21 +172,39 @@ const ArtTheftDetection = () => {
                   </div>
                 </div>
               ) : (
-                <div className="border-2 border-dashed rounded-lg p-8 text-center">
+                <div
+                  className="border-2 border-dashed rounded-lg p-8 text-center mb-4"
+                  onDragOver={handleDragOver}
+                  onDrop={handleDrop}
+                  onClick={triggerFileInput}
+                >
                   <div className="flex flex-col items-center">
+                    <input
+                      type="file"
+                      ref={fileInputRef}
+                      onChange={handleFileChange}
+                      accept="image/*"
+                      className="hidden"
+                    />
                     <UploadCloud className="h-12 w-12 text-muted-foreground mb-4" />
                     <p className="text-muted-foreground max-w-md">
-                      Drag and drop your images here, or click to browse files
+                      {selectedFile
+                        ? `Selected: ${selectedFile.name}`
+                        : "Drag and drop your images here, or click to browse files"}
                     </p>
-                    <div className="mt-4">
-                      <Button onClick={startScan}>Upload & Scan</Button>
-                    </div>
                     <div className="mt-2 text-xs text-muted-foreground">
                       Supported formats: JPG, PNG, WEBP, SVG | Max size: 20MB
                     </div>
                   </div>
                 </div>
               )}
+              <Button
+                onClick={startScan}
+                disabled={!selectedFile || isScanning}
+                className="w-full"
+              >
+                {isScanning ? "Scanning..." : "Scan with Perplexity Sonar"}
+              </Button>
             </CardContent>
           </Card>
 
