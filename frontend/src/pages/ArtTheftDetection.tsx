@@ -95,7 +95,8 @@ const ArtTheftDetection = () => {
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const startScan = () => {
+  const startScan = async () => {
+    console.log("test");
     setIsScanning(true);
     setProgress(0);
 
@@ -109,6 +110,39 @@ const ArtTheftDetection = () => {
         return prev + 5;
       });
     }, 300);
+    try {
+      // Prepare FormData for the API request
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+
+      // Send the request to your FastAPI backend
+      const response = await fetch(
+        "http://localhost:8000/reverse-image-search",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} - ${response.statusText}`);
+      }
+
+      // Parse the response
+      const data = await response.json();
+      console.log(data);
+
+      // Complete the progress and show results
+      setProgress(100);
+      setScanResult(data.sonar_response.choices[0].message.content);
+    } catch (err) {
+      setError(
+        err instanceof Error ? err.message : "An unknown error occurred"
+      );
+    } finally {
+      clearInterval(interval);
+      setIsScanning(false);
+    }
   };
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files.length > 0) {
