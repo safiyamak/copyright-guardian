@@ -2,7 +2,7 @@ export const Hero = () => {
   return (
     <section className="relative h-screen flex items-start justify-center pt-32 overflow-hidden bg-black">
       <img
-        src="/src/assets/hero-bg.svg"
+        src="/assets/hero-bg.svg"
         alt="Hero background"
         className="absolute inset-0 w-full h-[100%] object-cover z-0 opacity-100 animate-pan-bg"
       />

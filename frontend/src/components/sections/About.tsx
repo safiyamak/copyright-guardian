@@ -30,7 +30,7 @@ export const About = () => {
           </button>
         </div>
         <img
-          src="src/assets/cat-about-us.jpeg"
+          src="assets/cat-about-us.jpeg"
           alt="About illustration"
           className="w-[350px] h-auto rounded-[30px] object-cover max-lg:w-full"
         />
