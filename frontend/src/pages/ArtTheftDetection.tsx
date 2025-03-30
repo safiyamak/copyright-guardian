@@ -227,7 +227,7 @@ const ArtTheftDetection = () => {
                         : "Drag and drop your images here, or click to browse files"}
                     </p>
                     <div className="mt-2 text-xs text-muted-foreground">
-                      Supported formats: JPG, PNG, WEBP, SVG | Max size: 20MB
+                      Supported formats: JPG, PNG, WEBP, SVG | Max size: 1MB
                     </div>
                   </div>
                 </div>
