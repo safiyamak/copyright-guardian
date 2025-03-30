@@ -4,7 +4,7 @@ export const Hero = () => {
       <img
         src="/src/assets/hero-bg.svg"
         alt="Hero background"
-        className="absolute inset-0 w-full h-[100%] object-cover z-0 opacity-100 translate-y-[25%]"
+        className="absolute inset-0 w-full h-[100%] object-cover z-0 opacity-100 animate-pan-bg"
       />
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
         <h1 className="text-white text-4xl md:text-5xl font-bold mb-4 max-sm:text-3xl">

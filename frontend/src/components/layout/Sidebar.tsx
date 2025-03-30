@@ -27,11 +27,6 @@ const sidebarItems: SidebarItem[] = [
     icon: LayoutDashboard,
   },
   {
-    name: "Blockchain Social",
-    path: "/blockchain-social",
-    icon: Users,
-  },
-  {
     name: "Art Theft Detection",
     path: "/art-theft-detection",
     icon: Eye,
