@@ -9,6 +9,7 @@ import BlockchainSocial from "./pages/BlockchainSocial";
 import ArtTheftDetection from "./pages/ArtTheftDetection";
 import MusicSimilarity from "./pages/MusicSimilarity";
 import NotFound from "./pages/NotFound";
+import Home from "./pages/Home";
 
 const queryClient = new QueryClient();
 
@@ -19,8 +20,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route element={<MainLayout />}>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/blockchain-social" element={<BlockchainSocial />} />
             <Route
               path="/art-theft-detection"
