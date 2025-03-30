@@ -11,9 +11,9 @@ const TestimonialCard = ({
     <div className="text-white text-[120px] absolute -top-14 left-0 opacity-60 font-serif">
       "
     </div>
-    <div className="text-white text-base pt-12 relative z-10">
+    <div className="text-white text-base pt-12 relative z-10 font-['Inclusive_Sans']">
       <span>{quote}</span>
-      <div className="text-sm mt-4">
+      <div className="text-sm mt-4 font-['Inclusive_Sans']">
         – {author}, {role}
       </div>
     </div>

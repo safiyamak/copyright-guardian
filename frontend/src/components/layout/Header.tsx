@@ -14,36 +14,27 @@ export const Header = () => {
           <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-white group-hover:w-full transition-all duration-300"></span>
         </div>
 
-        <nav className="flex items-center gap-8 max-md:hidden">
-          <a
-            href="#"
-            className="text-white text-lg hover:text-gray-300 transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="text-white text-lg hover:text-gray-300 transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-          >
-            About Us
-          </a>
-          <a
-            href="#dashboard"
-            className="text-white text-lg hover:text-gray-300 transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
-          >
-            Dashboard
-          </a>
-        </nav>
-
-        <div className="flex items-center gap-4">
-          <div className="bg-[#814CF2] flex items-center gap-3 px-5 py-2 rounded-[50px] cursor-pointer hover:bg-[#6b3fd4] transition-colors">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/c8c7f5914638f35f14815186734ea42c53d837fc"
-              alt="Search icon"
-              className="w-[24px] h-[24px]"
-            />
-            <span className="text-white text-lg">Search...</span>
-          </div>
+        <div className="flex items-center gap-16">
+          <nav className="flex items-center gap-16 max-md:hidden">
+            <a
+              href="#"
+              className="text-white text-lg hover:text-gray-300 transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Home
+            </a>
+            <a
+              href="#about"
+              className="text-white text-lg hover:text-gray-300 transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              About Us
+            </a>
+            <a
+              href="#dashboard"
+              className="text-white text-lg hover:text-gray-300 transition-colors relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-white after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left"
+            >
+              Dashboard
+            </a>
+          </nav>
 
           <Button
             variant="ghost"

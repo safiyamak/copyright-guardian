@@ -30,7 +30,7 @@ export const About = () => {
           </button>
         </div>
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/2ae1c9be31f1b7b0892d4f390389033a024e306c"
+          src="src/assets/cat-about-us.jpeg"
           alt="About illustration"
           className="w-[350px] h-auto rounded-[30px] object-cover max-lg:w-full"
         />

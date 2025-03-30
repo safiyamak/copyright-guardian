@@ -51,11 +51,6 @@ export const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/a06eae5b287ab660b2b3d2a4ed6749ae715a7af8"
-              alt=""
-              className="w-[60px] h-[60px] float-right mt-[-60px]"
-            />
           </div>
         ))}
       </div>

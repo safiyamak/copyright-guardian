@@ -17,16 +17,6 @@ const Navbar = ({ toggleSidebar }: NavbarProps) => {
           >
             <MenuIcon className="h-6 w-6" />
           </button>
-          <div className="relative max-w-xs sm:max-w-md">
-            <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="h-5 w-5 text-muted-foreground" />
-            </span>
-            <Input
-              className="pl-10 py-2"
-              type="search"
-              placeholder="Search..."
-            />
-          </div>
         </div>
         <div className="flex items-center space-x-4">
           <Button variant="outline" size="icon" className="relative">
